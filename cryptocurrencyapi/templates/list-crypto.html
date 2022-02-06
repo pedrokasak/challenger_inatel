@@ -33,10 +33,11 @@
                     <td>R$ {{apis.current_price}}</td>
                     <td>{{apis.market_cap}}</td>
                     <td>
-                      <div class="progress">
+                      {{apis.circulating_supply}}
+                      <!-- <div class="progress">
                         <div class="progress-bar bg-gradient-success" role="progressbar" style="width: {{apis.circulating_supply }}%"
                           aria-valuenow="{{apis.circulating_supply}}" aria-valuemin="0" aria-valuemax="{{apis.total_supply}}"></div>
-                      </div>
+                      </div> -->
                     </td>
                   </tr>
                   {% endfor %}
