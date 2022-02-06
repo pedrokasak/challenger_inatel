@@ -1,0 +1,51 @@
+{% extends 'administrative/base.html' %}
+
+
+{% block title %} Challenger Inatel - Crypto API {% endblock title %}
+
+{% block content %}
+{% load static %}
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Estatística de Mercado de Criptomoedas</h4>
+            <div class="table-responsive">
+              <table class="table table-striped table-inverse table-responsive">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Simbolo</th>
+                    <th scope="col">Preço Atual</th>
+                    <th scope="col">Capitalização de Mercado</th>
+                    <th scope="col">Fornecimento Circulante</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for apis in api %}
+                  <tr>
+                    <td scope="row">{{apis.market_cap_rank}}</td>
+                    <td><img src="{{apis.image}}" width="30" height="30"</img> {{apis.name}}</td>
+                    <td>{{apis.symbol}}</td>
+                    <td>R$ {{apis.current_price}}</td>
+                    <td>{{apis.market_cap}}</td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-success" role="progressbar" style="width: {{apis.circulating_supply }}%"
+                          aria-valuenow="{{apis.circulating_supply}}" aria-valuemin="0" aria-valuemax="{{apis.total_supply}}"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}

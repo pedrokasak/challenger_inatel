@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #my apps
     'users.apps.UsersConfig',
     'cryptocurrencyapi',
+    'administrative',
     #3rd apps
     'rest_framework',
     
