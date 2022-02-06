@@ -1,0 +1,11 @@
+#virtual environments
+.venv
+venv
+env
+
+#security and secrets keys
+.env
+.env-local
+
+#folder vscode
+.vscode
