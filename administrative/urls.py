@@ -4,5 +4,5 @@ from .views import index
 app_name = 'administrative'
 
 urlpatterns = [
-    path('index',index,name='index')
+    path('index/',index,name='index')
 ]

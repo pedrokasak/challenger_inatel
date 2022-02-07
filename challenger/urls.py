@@ -29,5 +29,5 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-#handler500 = 'base.views.handler500'
-#handler404 = 'base.views.handler404'
+#handler500 = 'administrative.views.handler500'
+#handler404 = 'administrative.views.handler404'

@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-)8%%+0(g%%%u$1p#@+=u%1#%1ce1#e1q2$i3)gp9%88ci!5sq9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'users.Users'
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'cryptocurrencyapi',
     'administrative',
+    'logs',
     #3rd apps
     'rest_framework',
     
@@ -133,9 +135,13 @@ USE_I18N = True
 USE_TZ = True
 
 
+# Página de redirecionamento após o login
+LOGOUT_REDIRECT_URL = '/login'
+LOGIN_REDIRECT_URL = '/dashboard/index'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
