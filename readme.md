@@ -11,7 +11,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
-cp contrib/env-sample .env
+## (opcional) cp contrib/env-sample .env
 
 docker-compose --build
 

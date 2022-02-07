@@ -5,6 +5,12 @@ from .forms import StaffLoginForm, UserRegistrationForm, StaffSignUpForm
 from django.views.generic import CreateView
 from .models import Users
 
+"""
+Aqui é criado um novo Usuário
+
+"""
+
+
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
@@ -26,6 +32,10 @@ def register(request):
                   'register.html',
                   {'user_form': user_form})
 
+"""
+Aqui será informado que o usuário criado é do tipo staff
+
+"""
 
 class StaffSigUpView(CreateView):
     model = Users
@@ -41,6 +51,10 @@ class StaffSigUpView(CreateView):
         login(self.request, user)
         return redirect('administrative:index')
 
+"""
+Aqui o usuário vai fazer o login usando os forms e redirecionando para a pagina principal 
+
+"""
 
 def staff_login(request):
     form = StaffLoginForm(request.POST)

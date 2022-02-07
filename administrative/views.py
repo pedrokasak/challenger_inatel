@@ -4,6 +4,11 @@ from django.contrib.admin.views.decorators import staff_member_required
 import requests
 
 
+"""
+views básica de renderização da página e listagem do api no
+
+"""
+
 @staff_member_required
 @login_required
 def index(request):

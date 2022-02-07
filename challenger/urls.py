@@ -17,6 +17,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('dashboard/', include('administrative.urls')),
     path('crypto/', include('cryptocurrencyapi.urls')),
+    path('import-csv/', include('imports.urls')),
 
     # API Django Rest Framework
     path('users/api/', include(router.urls)),
