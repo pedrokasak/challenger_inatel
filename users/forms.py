@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import authenticate
-
+from django.contrib.auth.forms import UserCreationForm
 from .models import Users
 
 
@@ -35,3 +35,16 @@ class StaffLoginForm(forms.Form):
             if not user.is_staff:
                 raise forms.ValidationError("Usuário não é membro da equipe.")
         return super().clean()
+
+
+class StaffSignUpForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = Users
+        fields = ("email",)
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_staff = True
+        if commit:
+            user.save()
+        return user

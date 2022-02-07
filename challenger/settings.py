@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'cryptocurrencyapi',
     'administrative',
     'logs',
+    'imports',
     #3rd apps
     'rest_framework',
+    'crispy_forms',
     
 ]
 
@@ -136,7 +138,7 @@ USE_TZ = True
 
 
 # Página de redirecionamento após o login
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/dashboard/index'
 
 
@@ -154,3 +156,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
