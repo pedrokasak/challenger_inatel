@@ -25,4 +25,4 @@ python manage.py migrate
 
 python manage.py runserver
 
-## * caso de erro verificar o USER= PASSWORD= no arquivo .env e inserir as informações de acordo com a sua configuração padrão do postgres
+## * caso de erro verificar o USER= PASSWORD=  e o 'HOST': 'db', no arquivo .env e inserir as informações de acordo com a sua configuração padrão do postgres
