@@ -9,8 +9,8 @@ def home_response(client):
 
 class TestAdministrativeView:
     def test_reverse_resolve(self):
-        assert reverse("administrative:index") == "/"
-        assert resolve("/").view_name == "administrative:index"
+        assert reverse("administrative:index") == "/dashboard/index/"
+        assert resolve("/dashboard/index/").view_name == "administrative:index"
 
     def test_status_code(self, home_response):
         assert home_response.status_code == 200

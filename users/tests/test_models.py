@@ -4,7 +4,7 @@ from users.models import Users
 
 pytestmark = pytest.mark.django_db
 
-
+@pytest.fixture
 def test_create_user():
     user = Users.objects.create_user(
         first_name="usuario_test", email="usuario@test.com", password="passw0rd"

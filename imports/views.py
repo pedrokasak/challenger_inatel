@@ -30,5 +30,5 @@ def template(request):
 
 
 def read_archive(request):
-    filepath = 'imports/%m/%Y/'
+    filepath = 'media/imports/%m/%Y/'
     wb = load_workbook(filepath)
