@@ -7,5 +7,7 @@ env
 .env
 .env-local
 
-#folder vscode
+#folder vscode | pycharm
 .vscode
+.idea
+.pytest_cache
