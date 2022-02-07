@@ -40,7 +40,7 @@
               <div class="input-group-prepend bg-transparent">
                 <i class="input-group-text border-0 mdi mdi-magnify"></i>
               </div>
-              <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+              <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects" name="search">
             </div>
           </form>
         </div>
@@ -62,7 +62,10 @@
             </a>
           </li>
           <li class="nav-item nav-logout d-none d-lg-block">
-            <!-- <a class="nav-link" alt="Logout" title="Logout"> - " -->
+            <a href="{% url 'users:logout' %}"
+            class="nav-link"
+            alt="Logout"
+            title="Logout"> 
               <i class="mdi mdi-power"></i>
             </a>
           </li>

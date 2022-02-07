@@ -10,7 +10,7 @@ def home_response(client):
 
 class TestCryptoApiView:
     def test_reverse_resolve(self):
-        assert reverse("imports:import-and-read") == "import-and-read"
+        assert reverse("imports:import-and-read") == "import-and-read/"
         assert resolve("form").view_name == "template"
 
     def test_status_code(self, home_response):

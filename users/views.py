@@ -1,4 +1,4 @@
-from distutils import errors
+from django.contrib.auth import logout as auth_logout
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import StaffLoginForm, UserRegistrationForm, StaffSignUpForm
@@ -9,7 +9,6 @@ from .models import Users
 Aqui é criado um novo Usuário
 
 """
-
 
 def register(request):
     if request.method == 'POST':
@@ -74,5 +73,10 @@ def staff_login(request):
     return render(request, 'login.html', {'form': form})
 
 
+"""
+Usuário é deslogado
+"""
+
 def logout(request):
-    pass
+    auth_logout(request)
+    return redirect('/')

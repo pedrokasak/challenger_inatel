@@ -10,8 +10,8 @@ def home_response(client):
 
 class TestCryptoApiView:
     def test_reverse_resolve(self):
-        assert reverse("cryptocurrencyapi:api") == "api"
-        assert resolve("api") == "cryptocurrencyapi:api"
+        assert reverse("cryptocurrencyapi:api") == "api/"
+        assert resolve("/").view_name == "list"
 
     def test_status_code(self, home_response):
         assert home_response.status_code == 200
